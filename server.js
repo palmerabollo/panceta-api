@@ -12,13 +12,13 @@ app.get('/ping', function (req, res) {
   res.json({pong: true});
 });
 
-app.post('/events', function (req, res) {
+app.post('/:region/events', function (req, res) {
   // TODO magic goes here
   nextSong = SONGS[Math.floor(Math.random() * SONGS.length)];
   res.json({});
 });
 
-app.get('/playlist', function (req, res) {
+app.get('/:region/playlist', function (req, res) {
   var response = {};
 
   if (nextSong) {
